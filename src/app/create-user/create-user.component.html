@@ -1,0 +1,74 @@
+<h3>
+  Create User
+</h3>
+<!--  Форма нужна только для кнопки - валидация с помощью Bootstrap и функции , которые срабатываюи -->
+<form (ngSubmit)="onSubmit()" class="was-validated" [formGroup]="update" >
+  <div class="form-group">
+    <label>Name</label>
+    <input formControlName="name" type="text"  required class="form-control"  id="name" [(ngModel)]="user.name" name="name" placeholder="Name" >
+    <small *ngIf="nameValid()==false" class="text-danger">Name is required</small>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Surname</label>
+    <input formControlName="surname" type="text" required class="form-control" id="surname" [(ngModel)]="user.surname" name="surname" placeholder="Surname">
+    <small *ngIf="surnameValid()==false"class="text-danger">Surname is required</small>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Login</label>
+    <input formControlName="login"  type="text"  required minlength="5" class="form-control" id="login" [(ngModel)]="user.login" name="login" placeholder="login (min 4 symbols)">
+    <small *ngIf="loginValid()==false" class="text-danger">Login is required . MinLength = 5 </small>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Date of birth D/M/Y</label>
+    <br>
+    <small *ngIf="dayValid()==false"class="text-danger">Day ( 1 - 31 )</small>
+    <input formControlName="day" type="number"  required max="31" min="1" class="form-control" id="day" [(ngModel)]="day" name="day" placeholder="Day">/
+    <small *ngIf="monthValid()==false"class="text-danger">Month ( 1 - 12 ) </small>
+    <input formControlName="month" type="number"  required max="12" min="1" class="form-control" id="month" [(ngModel)]="month" name="month" placeholder="Month">/
+    <small *ngIf="yearValid()==false" class="text-danger">Year ( {{maxYear-100}} - {{maxYear}} )</small>
+    <input formControlName="year" type="number"  required  max="{{maxYear}}" min="{{maxYear-100}}" class="form-control" id="year" [(ngModel)]="year" name="year" placeholder="Year">
+
+  </div>
+  <br>
+  <!--  Форма нужна только для кнопки - валидация с помощью Bootstrap и функции , которые срабатываюи -->
+  <!--work with bootstrap valid ( reaquired , minLength , min , max )  - not Angular -->
+  <button [disabled]="!update.valid" class="btn btn-success" type="submit" >Submit</button>
+
+</form>
+
+
+<!--<h3>-->
+<!--  Create User-->
+<!--</h3>-->
+
+<!--<form (ngSubmit)="onSubmit()">-->
+<!--  <div class="form-group">-->
+<!--    <label>Name</label>-->
+<!--    <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name">-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <div class="form-group">-->
+<!--    <label>Surname</label>-->
+<!--    <input type="text" class="form-control" id="surname" [(ngModel)]="user.surname" name="surname">-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <div class="form-group">-->
+<!--    <label>Login</label>-->
+<!--    <input type="text" class="form-control" id="login" [(ngModel)]="user.login" name="login">-->
+<!--  </div>-->
+<!--<br>-->
+<!--  <div class="form-group">-->
+<!--    <label>Date of birth D/M/Y</label>-->
+<!--    <br>-->
+<!--    <input type="text"  id="day" [(ngModel)]="day" name="day">/-->
+<!--    <input type="text"  id="month" [(ngModel)]="month" name="month">/-->
+<!--    <input type="text"  id="year" [(ngModel)]="year" name="year">-->
+<!--  </div>-->
+<!--  <br>-->
+
+<!--  <button class="btn btn-success" type="submit">Submit</button>-->
+
+<!--</form>-->

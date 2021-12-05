@@ -1,0 +1,41 @@
+.name{
+  background-color: burlywood;
+}
+
+body {
+  background: whitesmoke;
+}
+
+.color{
+  background-color:paleturquoise;
+}
+
+footer {
+  background-color:paleturquoise;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.header{
+  background-color:paleturquoise;
+  height: 50px;
+  color:black;
+}
+
+.text{
+  margin-left: 100px;
+  float: left;
+  width: 10%;
+}
+
+a:link {
+  color:black;
+}
+a:visited {
+  color:dimgrey;
+}
+
